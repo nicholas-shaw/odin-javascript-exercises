@@ -5,11 +5,11 @@ function getAge(yearOfBirth, yearOfDeath) {
 }
 
 const findTheOldest = function (people) {
-  return people.reduce((lastEntry, thisEntry) =>
+  return people.reduce((highestEntrySoFar, thisEntry) =>
     getAge(thisEntry.yearOfBirth, thisEntry.yearOfDeath) >
-    getAge(lastEntry.yearOfBirth, lastEntry.yearOfDeath)
+    getAge(highestEntrySoFar.yearOfBirth, highestEntrySoFar.yearOfDeath)
       ? thisEntry
-      : lastEntry
+      : highestEntrySoFar
   );
 };
 
